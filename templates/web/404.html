@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Page Not Found</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        .container {
+            text-align: center;
+        }
+        .logo {
+            width: 150px;
+            margin-bottom: 20px;
+        }
+        h1 {
+            color: #ff9900;
+            margin-bottom: 20px;
+        }
+        p {
+            color: #333;
+            margin-bottom: 20px;
+        }
+        #home-link {
+            color: #007bff;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        #error-image {
+            max-width: 400px;
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <img src="https://via.placeholder.com/150" alt="Amazon Logo" class="logo">
+        <h1>Sorry, something went wrong.</h1>
+        <img src="https://via.placeholder.com/400" alt="Error Image" id="error-image">
+        <p>We couldn't find the page you were looking for.</p>
+        <p>Would you like to <a href="/" id="home-link">go back to our home page</a>?</p>
+    </div>
+
+    <script>
+        document.getElementById('home-link').addEventListener('click', function(event) {
+            event.preventDefault();
+            window.location.href = '/';
+        });
+    </script>
+</body>
+</html>

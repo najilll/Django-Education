@@ -1,0 +1,182 @@
+{% extends "web/partials/base.html" %}
+{% load static %}
+{% block content %}
+    
+    <!-- breadcrumb start -->
+    <div class="breadcrumb-area bg-overlay" style="background-image:url('{% static 'web/img/bg/3.png'%}')">
+        <div class="container">
+            <div class="breadcrumb-inner">
+                <div class="section-title mb-0 text-center">
+                    <h2 class="page-title">Blog</h2>
+                    <ul class="page-list">
+                        <li><a href="index.html">Home</a></li>
+                        <li>Blog</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- breadcrumb end -->
+
+    <!-- blog area start -->
+    <div class="blog-area pd-top-120 pd-bottom-120">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    {% for b in blog %}
+                    <div class="single-blog-inner style-border">
+                        <a href="{% url 'blog-detail' product_id=b.id %}">
+                        <div class="thumb">
+                            <img src="{{b.image.url}}" alt="img" style="width:100%;">
+                        </div>
+                    </a>
+                        <div class="details">
+                            <ul class="blog-meta">
+                                <li><i class="fa fa-user"></i>{{b.course_name}}</li>
+                                <li><i class="fa fa-calendar-check-o"></i> {{b.date_created}}</li>
+                            </ul>
+                            <h3 class="title"><a href="{% url 'blog-detail' product_id=b.id %}">{{b.topic}}</a></h3>
+                            <p>{{b.subject}}</p>
+                            <a class="read-more-text" href="{% url 'blog-detail' product_id=b.id %}">READ MORE <i class="fa fa-angle-right"></i></a>
+                        </div>
+                    </div>
+                    {% endfor %}
+                    <nav class="td-page-navigation">
+                        <ul class="pagination">
+                            <li class="pagination-arrow"><a href="#"><i class="fa fa-angle-double-left"></i></a></li>
+                            <li><a href="#">1</a></li>
+                            <li><a class="active" href="#">2</a></li>
+                            <li><a href="#">...</a></li>
+                            <li><a href="#">3</a></li>
+                            <li class="pagination-arrow"><a href="#"><i class="fa fa-angle-double-right"></i></a></li>
+                        </ul>
+                    </nav>
+                </div>
+                
+            </div>
+        </div>
+    </div>
+    <!-- blog area end -->
+
+    <!-- footer area start -->
+    <footer class="footer-area bg-gray">
+        <div class="footer-subscribe">
+            <div class="container">
+                <form class="footer-subscribe-inner">
+                    <div class="row">
+                        <div class="col-lg-5">
+                            <div class="single-input-inner style-border-bottom">
+                                <input type="text" placeholder="Your Full Name">
+                            </div>
+                        </div>
+                        <div class="col-lg-5">
+                            <div class="single-input-inner style-border-bottom">
+                                <input type="text" placeholder="Your Email Address">
+                            </div>
+                        </div>
+                        <div class="col-lg-2">
+                            <a class="btn btn-base" href="#">Subscribe</a>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+        <div class="footer-top">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-3 col-md-6">
+                        <div class="widget widget_contact">
+                            <h4 class="widget-title">Contact Us</h4>
+                            <ul class="details">
+                                <li><i class="fa fa-map-marker"></i> 420 Love Sreet 133/2 Street NewYork</li>
+                                <li><i class="fa fa-envelope"></i> <a href="https://solverwp.com/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="6e07000801400d01001a0f0d1a2e09030f0702400d0103">[email&#160;protected]</a></li>
+                                <li><i class="fa fa-phone"></i> 012 345 678 9101</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-6">
+                        <div class="widget widget_nav_menu">
+                            <h4 class="widget-title">Course</h4>
+                            <ul>
+                                <li><a href="course.html">Branding design</a></li>
+                                <li><a href="course.html">Ui/Ux designing </a></li>
+                                <li><a href="course.html">Make Elements</a></li>
+                                <li><a href="course.html">Business</a></li>
+                                <li><a href="course.html">Graphics design</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-6">
+                        <div class="widget widget_blog_list">
+                            <h4 class="widget-title">News & Blog</h4>
+                            <ul>
+                                <li>
+                                    <h6><a href="blog-details.html">Big Ideas Of Business Branding Info.</a></h6>
+                                    <span class="date"><i class="fa fa-calendar"></i>December 7, 2022</span>
+                                </li>
+                                <li>
+                                    <h6><a href="blog-details.html">Ui/Ux Ideas Of Business Branding Info.</a></h6>
+                                    <span class="date"><i class="fa fa-calendar"></i>December 7, 2022</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-6">
+                        <div class="widget widget_contact">
+                            <h4 class="widget-title">Twitter Feed</h4>
+                            <ul class="details">
+                                <li>
+                                    <i class="fa fa-twitter"></i> 
+                                    Simply dummy brand  <a href="#">https//tweets/c3l.com</a>
+                                    <div class="time">9 Hours ago</div>
+                                </li>
+                                <li>
+                                    <i class="fa fa-twitter"></i> 
+                                    Simply dummy brand  <a href="#">https//tweets/c7l.com</a>
+                                    <div class="time">9 Hours ago</div>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-4 col-md-6 align-self-center">
+                        <a href="index.html"><img src="{% static 'web/img/footer-logo.png'%}" alt="img"></a>
+                    </div>
+                    <div class="col-lg-4  col-md-6 order-lg-12 text-md-right align-self-center">
+                        <ul class="social-media mt-md-0 mt-3">
+                            <li><a class="facebook" href="#"><i class="fa fa-facebook"></i></a></li>
+                            <li><a class="twitter" href="#"><i class="fa fa-twitter"></i></a></li>
+                            <li><a class="instagram" href="#"><i class="fa fa-instagram"></i></a></li>
+                            <li><a class="youtube" href="#"><i class="fa fa-youtube"></i></a></li>
+                            <li><a class="pinterest" href="#"><i class="fa fa-pinterest"></i></a></li>
+                        </ul>
+                    </div>
+                    <div class="col-lg-4 order-lg-8 text-lg-center align-self-center mt-lg-0 mt-3">
+                        <p>copyright 2022 by edumint.com</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!-- footer area end -->
+
+    <!-- back to top area start -->
+    <div class="back-to-top">
+        <span class="back-top"><i class="fa fa-angle-up"></i></span>
+    </div>
+    <!-- back to top area end -->
+
+
+    <!-- all plugins here -->
+    <script src="{% static 'web/js/vendor.js'%}"></script>
+    <!-- main js  -->
+    <script src="{% static 'web/js/main.js'%}"></script>
+</body>
+</html>
+
+{% endblock %}

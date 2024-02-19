@@ -1,0 +1,188 @@
+{% extends "web/partials/base.html" %}
+{% load static %}
+{% block content %}
+    
+    <!-- breadcrumb start -->
+    <div class="breadcrumb-area bg-overlay" style="background-image:url('{% static 'web/img/bg/3.png'%}')">
+        <div class="container">
+            <div class="breadcrumb-inner">
+                <div class="section-title mb-0 text-center">
+                    <h2 class="page-title">Courses</h2>
+                    <ul class="page-list">
+                        <li><a href="{% url "index" %}">Home</a></li>
+                        <li>Courses</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- breadcrumb end -->
+
+    <!-- blog area start -->
+    <div class="blog-area pd-top-120 pd-bottom-120">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 order-lg-12">
+                    <div class="row">
+                        {% for c in course1 %}
+                        <div class="col-md-6">
+                            <div class="single-course-inner">
+                                <a href="{% url 'graphic' product_id=c.id %}">
+                                <div class="thumb">
+                                    <img src="{{c.image.url}}" alt="img" style="width: 100%;">
+                                </div>
+                            </a>
+                                <div class="details">
+                                    <div class="details-inner">
+                                        <div class="emt-user">
+                                            <span class="u-thumb"><img src="{{c.image2.url}}" alt="img"></span>
+                                            <span class="align-self-center">{{c.name}}</span>
+                                        </div>
+                                        <h6><a href="{% url 'graphic' product_id=c.id %}">{{c.course_name}}</a></h6>
+                                    </div>
+                                    <div class="emt-course-meta">
+                                        <div class="row">
+                                            <div class="col-6">
+                                                <div class="rating">
+                                                    <i class="fa fa-star"></i> 4.3
+                                                    <span>(23)</span>
+                                                </div>
+                                            </div>
+                                            <div class="col-6">
+                                                <div class="price text-right">
+                                                    Price: <span>${{c.price}}</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        {% endfor %}
+                        {% for c in course2 %}
+                        <div class="col-md-6">
+                            <div class="single-course-inner">
+                                <a href="{% url 'digital' product_id=c.id %}">
+                                <div class="thumb">
+                                    <img src="{{c.image.url}}" alt="img" style="width: 100%;">
+                                </div>
+                            </a>
+                                <div class="details">
+                                    <div class="details-inner">
+                                        <div class="emt-user">
+                                            <span class="u-thumb"><img src="{{c.image2.url}}" alt="img"></span>
+                                            <span class="align-self-center">{{c.name}}</span>
+                                        </div>
+                                        <h6><a href="{% url 'digital' product_id=c.id %}">{{c.course_name}}</a></h6>
+                                    </div>
+                                    <div class="emt-course-meta">
+                                        <div class="row">
+                                            <div class="col-6">
+                                                <div class="rating">
+                                                    <i class="fa fa-star"></i> 4.3
+                                                    <span>(23)</span>
+                                                </div>
+                                            </div>
+                                            <div class="col-6">
+                                                <div class="price text-right">
+                                                    Price: <span>${{c.price}}</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        {% endfor %}
+                        {% for c in course3 %}
+                        <div class="col-md-6">
+                            <div class="single-course-inner">
+                                <a href="{% url 'translation' product_id=c.id %}">
+                                <div class="thumb">
+                                    <img src="{{c.image.url}}" alt="img" style="width: 100%;">
+                                </div>
+                            </a>
+                                <div class="details">
+                                    <div class="details-inner">
+                                        <div class="emt-user">
+                                            <span class="u-thumb"><img src="{{c.image2.url}}" alt="img"></span>
+                                            <span class="align-self-center">{{c.name}}</span>
+                                        </div>
+                                        <h6><a href="course-details.html">{{c.course_name}}</a></h6>
+                                    </div>
+                                    <div class="emt-course-meta">
+                                        <div class="row">
+                                            <div class="col-6">
+                                                <div class="rating">
+                                                    <i class="fa fa-star"></i> 4.3
+                                                    <span>(23)</span>
+                                                </div>
+                                            </div>
+                                            <div class="col-6">
+                                                <div class="price text-right">
+                                                    Price: <span>${{c.price}}</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        {% endfor %}
+                        
+                        {% for c in course4 %}
+                        <div class="col-md-6">
+                            <div class="single-course-inner">
+                                <a href="{% url 'music' product_id=c.id %}">
+                                <div class="thumb">
+                                    <img src="{{c.image.url}}" alt="img" style="width: 100%;">
+                                </div>
+                            </a>
+                                <div class="details">
+                                    <div class="details-inner">
+                                        <div class="emt-user">
+                                            <span class="u-thumb"><img src="{{c.image2.url}}" alt="img"></span>
+                                            <span class="align-self-center">{{c.name}}</span>
+                                        </div>
+                                        <h6><a href="{% url 'music' product_id=c.id %}">{{c.course_name}}</a></h6>
+                                    </div>
+                                    <div class="emt-course-meta">
+                                        <div class="row">
+                                            <div class="col-6">
+                                                <div class="rating">
+                                                    <i class="fa fa-star"></i> 4.3
+                                                    <span>(23)</span>
+                                                </div>
+                                            </div>
+                                            <div class="col-6">
+                                                <div class="price text-right">
+                                                    Price: <span>${{c.price}}</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        {% endfor %}
+                        
+                    </div>
+                    <nav class="td-page-navigation">
+                        <ul class="pagination">
+                            <li class="pagination-arrow"><a href="#"><i class="fa fa-angle-double-left"></i></a></li>
+                            <li><a href="#">1</a></li>
+                            <li><a class="active" href="#">2</a></li>
+                            <li><a href="#">...</a></li>
+                            <li><a href="#">3</a></li>
+                            <li class="pagination-arrow"><a href="#"><i class="fa fa-angle-double-right"></i></a></li>
+                        </ul>
+                    </nav>
+                </div>
+                
+            </div>
+        </div>
+    </div>
+    <!-- blog area end -->
+
+    
+{% endblock %}
